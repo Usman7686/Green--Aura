@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Green Aura Hair Oil</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial;background:#f5f5f5;}
+
+    /* NAVBAR */
+    .navbar{
+      display:flex;justify-content:space-between;align-items:center;
+      background:#1b5e20;color:white;padding:10px 20px;
+      flex-wrap:wrap;
+    }
+
+    .logo{display:flex;align-items:center;gap:10px;}
+    .logo img{width:45px;height:45px;border-radius:50%;object-fit:cover;}
+
+    .menu-toggle{display:none;font-size:26px;cursor:pointer;}
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      align-items:center;
+    }
+
+    .nav-links li{position:relative;}
+
+    .nav-links a{
+      color:white;text-decoration:none;padding:10px;display:block;
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      display:none;
+      position:absolute;
+      background:#2e7d32;
+      top:40px;
+      left:0;
+      min-width:150px;
+      border-radius:5px;
+      overflow:hidden;
+    }
+
+    .dropdown a:hover{background:#1b5e20;}
+
+    .nav-links li:hover .dropdown{
+      display:block;
+    }
+
+    /* HERO */
+    .hero{
+      text-align:center;
+      padding:40px 20px;
+      background:#e8f5e9;
+    }
+
+    .hero img{width:120px;max-width:100%;}
+
+    button{
+      padding:12px 25px;background:#1b5e20;color:white;
+      border:none;border-radius:5px;margin-top:10px;cursor:pointer;
+      width:auto;
+    }
+
+    /* PRODUCT */
+    .product-card{
+      max-width:380px;
+      width:90%;
+      margin:30px auto;
+      background:white;
+      border-radius:15px;
+      text-align:center;
+      padding:15px;
+    }
+
+    .product-card img{
+      width:100%;
+      height:auto;
+      max-height:300px;
+      object-fit:contain;
+    }
+
+    .price{font-size:20px;color:#1b5e20;font-weight:bold;}
+
+    /* ABOUT */
+    .about{
+      width:90%;
+      max-width:800px;
+      margin:40px auto;
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      line-height:1.6;
+    }
+
+    /* FORM */
+    .form-box{
+      width:90%;
+      max-width:400px;
+      margin:auto;
+      background:white;
+      padding:20px;
+      border-radius:10px;
+    }
+
+    .form-box input,.form-box textarea{
+      width:100%;padding:10px;margin:10px 0;
+    }
+
+    footer{text-align:center;background:#1b5e20;color:white;padding:10px;margin-top:30px;}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      .menu-toggle{display:block;}
+
+      .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:#1b5e20;
+      }
+
+      .nav-links.show{display:flex;}
+
+      .nav-links li{width:100%;}
+
+      .dropdown{
+        position:static;
+        display:none;
+        width:100%;
+      }
+
+      .dropdown.show{display:block;}
+
+      .nav-links a{padding:12px;border-top:1px solid rgba(255,255,255,0.2);}
+
+      button{width:100%;}
+    }
+
+    /* SMALL DEVICES */
+    @media(max-width:480px){
+      .hero h1{font-size:22px;}
+      .hero p{font-size:14px;}
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">
+    <img src="./ChatGPT Image May 8, 2026, 12_47_59 AM (1).png"/>
+    <h2>Green Aura</h2>
+  </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul class="nav-links" id="menu">
+    <li><a href="#">Home</a></li>
+
+    <li>
+      <a href="#" onclick="toggleDropdown(event)">Pages ▾</a>
+      <div class="dropdown" id="dropdownMenu">
+        <a href="#product">Product</a>
+        <a href="#about">About</a>
+        <a href="#order">Order</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="./ChatGPT Image May 8, 2026, 12_47_59 AM (1).png"/>
+  <h1>Green Aura Hair Oil</h1>
+  <p>Best Natural Hair Oil in Pakistan</p>
+  <a href="#order"><button>Order Now</button></a>
+</section>
+
+<!-- PRODUCT -->
+<div class="product-card" id="product">
+  <img src="./ChatGPT Image May 8, 2026, 12_58_04 AM.png"/>
+  <h3>Green Aura Hair Oil</h3>
+
+  <p>
+    Natural hair oil that helps reduce hair fall, boost growth, and make hair strong and shiny.
+  </p>
+
+  <div style="margin:10px 0;">
+    <span style="text-decoration: line-through; color: gray;">Rs. 999</span>
+    <span class="price"> Rs. 699</span>
+  </div>
+
+  <p style="color:green; font-weight:bold;">🔥 Limited Time Offer + Free Delivery</p>
+
+  <a href="#order"><button>Order Now</button></a>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2>About Green Aura</h2>
+  <p>
+    Green Aura is a premium natural hair care brand in Pakistan focused on providing high-quality herbal solutions.
+    Our hair oil is made with carefully selected natural ingredients that nourish your scalp, strengthen roots,
+    and promote faster hair growth.
+  </p>
+</section>
+
+<!-- ORDER -->
+<section id="order" class="form-box">
+  <h2>Place Order</h2>
+  <input id="name" placeholder="Name"/>
+  <input id="phone" placeholder="Phone"/>
+  <textarea id="address" placeholder="Address"></textarea>
+  <button onclick="sendOrder()">Order on WhatsApp</button>
+</section>
+
+<footer>© 2026 Green Aura</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleDropdown(e){
+  if(window.innerWidth <= 768){
+    e.preventDefault();
+    document.getElementById("dropdownMenu").classList.toggle("show");
+  }
+}
+
+function sendOrder(){
+  let name=document.getElementById("name").value;
+  let phone=document.getElementById("phone").value;
+  let address=document.getElementById("address").value;
+
+  if(!name || !phone || !address){
+    alert("Fill all fields");
+    return;
+  }
+
+  let businessPhone="923193906763";
+
+  let msg=`New Order:%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0AProduct: Green Aura Hair Oil - Rs.699`;
+
+  window.open(`https://wa.me/${businessPhone}?text=${msg}`,"_blank");
+}
+</script>
+
+</body>
+</html>
